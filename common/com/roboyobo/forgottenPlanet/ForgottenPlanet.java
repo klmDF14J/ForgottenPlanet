@@ -30,6 +30,7 @@ import com.roboyobo.forgottenPlanet.dimension.EmblazonedForestBiome;
 import com.roboyobo.forgottenPlanet.dimension.ForgottenLootGenerator;
 import com.roboyobo.forgottenPlanet.dimension.ForgottenPlanetWorldProvider;
 import com.roboyobo.forgottenPlanet.item.Items;
+import com.roboyobo.forgottenPlanet.mob.Mobs;
 import com.roboyobo.forgottenPlanet.mob.entity.EntityEmblazonedCreeper;
 import com.roboyobo.forgottenPlanet.mob.model.ModelEmblazonedCreeper;
 import com.roboyobo.forgottenPlanet.mob.render.RenderEmblazonedCreeper;
@@ -76,26 +77,12 @@ public class ForgottenPlanet
            emblazonedForest = new EmblazonedForestBiome(23).setBiomeName("Emblazoned Forest").setMinMaxHeight(0.2F, 1F).setTemperatureRainfall(1F, 0F);
            DimensionManager.registerProviderType(dimension, ForgottenPlanetWorldProvider.class, false);
     	   DimensionManager.registerDimension(dimension, dimension);
-    	   EntityRegistry.registerModEntity(EntityEmblazonedCreeper.class, "Emblazoned Creeper", 1, this, 80, 3, true);
-    	   EntityRegistry.addSpawn(EntityEmblazonedCreeper.class, 10, 2, 4, EnumCreatureType.monster, ForgottenPlanet.emblazonedForest);
-    	   LanguageRegistry.instance().addStringLocalization("entity." + modid + "." + "Emblazoned Creeper" + ".name", "Emblazoned Creeper");
-    	   registerEntityEgg(EntityEmblazonedCreeper.class, 0xffffff, 0x000000);
-    	   RenderingRegistry.registerEntityRenderingHandler(EntityEmblazonedCreeper.class, new RenderEmblazonedCreeper(new ModelEmblazonedCreeper(0), 2.0F));
+    	   Mobs.setMod(this);
+    	   Mobs.initMobs();
+    	   
        }
 
-	private void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) {
-		  int id = getUniqueEntityId();
-		  EntityList.IDtoClassMapping.put(id, entity);
-		  EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
-	}
 	
-	public static int getUniqueEntityId() {
-	  do {
-	   startEntityId++;
-	  } 
-	  while (EntityList.getStringFromID(startEntityId) != null);
-	   return startEntityId;
-	 }
        
        
        
