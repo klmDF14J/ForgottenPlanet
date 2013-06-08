@@ -9,6 +9,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemStack;
 
 public class Blocks {
 		public static Block emblazonedGrass;
@@ -26,8 +27,8 @@ public class Blocks {
 	   
     	
     	public static void initBlocks() {
-    		emblazonedGrass = new EmblazonedGrass(BlockID.emblazonedGrass, Material.rock).setUnlocalizedName("Emblazoned Grass");
-    		enchantedGrass = new EnchantedGrass(BlockID.enchantedGrass, Material.rock).setUnlocalizedName("Enchanted Grass"); 
+    		emblazonedGrass = new EmblazonedGrass(BlockID.emblazonedGrass, Material.grass).setUnlocalizedName("Emblazoned Grass");
+    		enchantedGrass = new EnchantedGrass(BlockID.enchantedGrass, Material.grass).setUnlocalizedName("Enchanted Grass"); 
     		forgottenSand = new ForgottenPlanetBlock(BlockID.forgottenSand, Material.sand).setUnlocalizedName("Forgotten Sand");
     		forgottenDirt = new ForgottenPlanetBlock(BlockID.forgottenDirt, Material.grass).setUnlocalizedName("Forgotten Dirt");
     		emblazonedLog = new EnchantedLog(BlockID.emblazonedLog, Material.wood).setUnlocalizedName("Emblazoned Log");
@@ -39,7 +40,6 @@ public class Blocks {
     		emblazonedStone = new ForgottenPlanetStoneBlock(BlockID.emblazonedStone).setUnlocalizedName("Emblazoned Stone");
     		emblazonedCobble = new ForgottenPlanetBlock(BlockID.emblazonedCobble, Material.rock).setUnlocalizedName("Emblazoned Cobble");
     		emblazonedCoalOre = new ForgottenOre(BlockID.forgottenFuelOre, Material.rock).setUnlocalizedName("Emblazoned Fuel");
-    		emblazonedStoneBrick = new ForgottenPlanetBlock(BlockID.emblazonedStoneBrick, Material.rock).setUnlocalizedName("Emblazoned Stone Brick");
     	}
     	
     	public static void registerBlocks() {
@@ -56,7 +56,6 @@ public class Blocks {
             GameRegistry.registerBlock(emblazonedStone, ForgottenPlanet.modid + emblazonedStone.getUnlocalizedName2());
             GameRegistry.registerBlock(emblazonedCobble, ForgottenPlanet.modid + emblazonedCobble.getUnlocalizedName2());
             GameRegistry.registerBlock(emblazonedCoalOre, ForgottenPlanet.modid + emblazonedCoalOre.getUnlocalizedName2());
-            GameRegistry.registerBlock(emblazonedStoneBrick, ForgottenPlanet.modid + emblazonedStoneBrick.getUnlocalizedName2());
     	}
     	
     	public static void addNames() {
@@ -69,11 +68,11 @@ public class Blocks {
             LanguageRegistry.addName(forgottenLeaves2, "Forgotten Leaves");
             LanguageRegistry.addName(forgottenLeaves3, "Forgotten Leaves");
             LanguageRegistry.addName(portal, "Forgotten Portal");
-            LanguageRegistry.addName(genericBlock, "Forgotten Portal Frame");
+            LanguageRegistry.addName(new ItemStack(genericBlock, 1, 0), "Forgotten Portal Frame");
+            LanguageRegistry.addName(new ItemStack(genericBlock, 1, 1), "Emblazoned Stone Brick");
             LanguageRegistry.addName(emblazonedStone, "Emblazoned Stone");
             LanguageRegistry.addName(emblazonedCobble, "Emblazoned Cobble");
             LanguageRegistry.addName(emblazonedCoalOre, "Forgotten Fuel Ore");
-            LanguageRegistry.addName(emblazonedStoneBrick, "Emblazoned Stone Brick");
     	}
     	
 

@@ -18,9 +18,7 @@ public class EnchantedLog extends Block
        {
              super(id, par2Material);
              this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
-             this.setHardness(3F);
-             this.setResistance(5F);
-             this.setLightValue(0.2F);
+             this.setHardness(2F);
        }
        
        @SideOnly(Side.CLIENT)

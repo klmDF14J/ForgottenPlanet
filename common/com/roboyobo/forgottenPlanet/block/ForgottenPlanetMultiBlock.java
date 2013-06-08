@@ -23,11 +23,13 @@ public class ForgottenPlanetMultiBlock extends Block
       
        @SideOnly(Side.CLIENT)
        private Icon[] icons;
+       
+       private int numOfBlocks = 2;
       
        @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)
     {
-             icons = new Icon[2];
+             icons = new Icon[numOfBlocks];
             
              for(int i = 0; i < icons.length; i++)
              {
@@ -44,7 +46,7 @@ public class ForgottenPlanetMultiBlock extends Block
        @SideOnly(Side.CLIENT)
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-        for (int var4 = 0; var4 < 2; ++var4)
+        for (int var4 = 0; var4 < numOfBlocks; ++var4)
         {
             par3List.add(new ItemStack(par1, 1, var4));
         }

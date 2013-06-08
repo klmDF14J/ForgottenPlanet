@@ -39,7 +39,7 @@ public class EntityEmblazonedHuman extends EntityMob
     {
         super(par1World);
         this.texture = "/mods/ForgottenPlanet/textures/mobs/Emblazoned Human.png";
-        this.moveSpeed = 0.23F;
+        this.moveSpeed = 0.6F;
         this.getNavigator().setBreakDoors(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIBreakDoor(this));
@@ -180,7 +180,7 @@ public class EntityEmblazonedHuman extends EntityMob
 
                 if (flag)
                 {
-                    this.setFire(8);
+                    //this.setFire(8);
                 }
             }
         }
@@ -213,7 +213,7 @@ public class EntityEmblazonedHuman extends EntityMob
 
         if (flag && this.getHeldItem() == null && this.isBurning() && this.rand.nextFloat() < (float)this.worldObj.difficultySetting * 0.3F)
         {
-            par1Entity.setFire(2 * this.worldObj.difficultySetting);
+            //par1Entity.setFire(2 * this.worldObj.difficultySetting);
         }
 
         return flag;
@@ -233,7 +233,8 @@ public class EntityEmblazonedHuman extends EntityMob
             i += itemstack.getDamageVsEntity(this);
         }
 
-        return i;
+        //return i;
+        return 10;
     }
 
     /**

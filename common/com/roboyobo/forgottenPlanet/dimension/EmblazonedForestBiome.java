@@ -4,6 +4,11 @@ import java.util.Random;
 
 import com.roboyobo.forgottenPlanet.ForgottenPlanet;
 import com.roboyobo.forgottenPlanet.block.Blocks;
+import com.roboyobo.forgottenPlanet.generator.ForgottenPlanetAbandonedHutGenerator;
+import com.roboyobo.forgottenPlanet.generator.ForgottenPlanetEnchantedGrassPatch;
+import com.roboyobo.forgottenPlanet.generator.ForgottenPlanetLargeAbandonedHutGenerator;
+import com.roboyobo.forgottenPlanet.generator.ForgottenPlanetTreeGenerator;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
@@ -16,6 +21,7 @@ public class EmblazonedForestBiome extends BiomeGenBase
 	public WorldGenerator treeGenerator;
 	public WorldGenerator abandonedHutGenerator;
 	public WorldGenerator largeAbandonedHutGenerator;
+	public WorldGenerator enchantedDirtPatchGenerator;
 
 	public byte sTopBlock;
 	public byte sFillerBlock;
@@ -31,7 +37,7 @@ public class EmblazonedForestBiome extends BiomeGenBase
         this.theBiomeDecorator.reedsPerChunk = 0;
         this.theBiomeDecorator.cactiPerChunk = 0;
         this.treeGenerator = new ForgottenPlanetTreeGenerator(true);
-        this.theBiomeDecorator.generateLakes = false;
+        this.theBiomeDecorator.generateLakes = true;
         this.abandonedHutGenerator = new ForgottenPlanetAbandonedHutGenerator();
         this.largeAbandonedHutGenerator = new ForgottenPlanetLargeAbandonedHutGenerator();
         this.theBiomeDecorator.treesPerChunk = 10;

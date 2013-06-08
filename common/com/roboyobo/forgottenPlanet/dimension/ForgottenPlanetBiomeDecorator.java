@@ -73,7 +73,6 @@ public class ForgottenPlanetBiomeDecorator extends BiomeDecorator
         this.sandPerChunk2 = 3;
         this.clayPerChunk = 1;
         this.bigMushroomsPerChunk = 0;
-        this.generateLakes = true;
         this.biome = par1BiomeGenBase;
     }
 

@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Random;
 
 import com.roboyobo.forgottenPlanet.ForgottenPlanet;
+import com.roboyobo.forgottenPlanet.block.Blocks;
+import com.roboyobo.forgottenPlanet.generator.ForgottenPlanetEnchantedGrassPatch;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
@@ -204,7 +206,7 @@ public class ForgottenPlanetChunkProvider implements IChunkProvider
                                 }
                                 else if (var12 * 8 + var31 < var6)
                                 {
-                                    par3ArrayOfByte[var43 += var44] = (byte)Block.waterStill.blockID;
+                                    par3ArrayOfByte[var43 += var44] = (byte)Blocks.emblazonedGrass.blockID;
                                 }
                                 else
                                 {
@@ -564,7 +566,7 @@ public class ForgottenPlanetChunkProvider implements IChunkProvider
             var12 = var4 + this.rand.nextInt(16) + 8;
             var13 = this.rand.nextInt(128);
             var14 = var5 + this.rand.nextInt(16) + 8;
-            (new WorldGenLakes(Block.waterStill.blockID)).generate(this.worldObj, this.rand, var12, var13, var14);
+            (new ForgottenPlanetEnchantedGrassPatch(Blocks.enchantedGrass.blockID)).generate(this.worldObj, this.rand, var12, var13, var14);
         }
 
         if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, var11, LAVA) &&
@@ -576,7 +578,7 @@ public class ForgottenPlanetChunkProvider implements IChunkProvider
 
             if (var13 < 63 || this.rand.nextInt(10) == 0)
             {
-                (new WorldGenLakes(Block.lavaStill.blockID)).generate(this.worldObj, this.rand, var12, var13, var14);
+                (new ForgottenPlanetEnchantedGrassPatch(Blocks.enchantedGrass.blockID)).generate(this.worldObj, this.rand, var12, var13, var14);
             }
         }
 

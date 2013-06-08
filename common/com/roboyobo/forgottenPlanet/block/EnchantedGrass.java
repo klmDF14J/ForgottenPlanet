@@ -29,8 +29,7 @@ public class EnchantedGrass extends Block
        {
              super(id, par2Material);
              this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
-             this.setHardness(3F);
-             this.setResistance(5F);
+             this.setHardness(0.5F);
        }
        
        @SideOnly(Side.CLIENT)
@@ -55,5 +54,31 @@ public class EnchantedGrass extends Block
     	   ParticleSpawner.spawnRandomParticle(par5Random, par1World, "mobSpell", par2, par3, par4, 0, 0, 255);
     	   ParticleSpawner.spawnRandomParticle(par5Random, par1World, "mobSpell", par2, par3, par4, 255, 0, 255);
     	   }
+       }
+       
+       public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+       {
+           if (!par1World.isRemote)
+           {
+               if (par1World.getBlockLightValue(par2, par3 + 1, par4) < 4 && par1World.getBlockLightOpacity(par2, par3 + 1, par4) > 2)
+               {
+                   par1World.setBlock(par2, par3, par4, Blocks.forgottenDirt.blockID);
+               }
+               else if (par1World.getBlockLightValue(par2, par3 + 1, par4) >= 9)
+               {
+                   for (int l = 0; l < 4; ++l)
+                   {
+                       int i1 = par2 + par5Random.nextInt(3) - 1;
+                       int j1 = par3 + par5Random.nextInt(5) - 3;
+                       int k1 = par4 + par5Random.nextInt(3) - 1;
+                       int l1 = par1World.getBlockId(i1, j1 + 1, k1);
+
+                       if (par1World.getBlockId(i1, j1, k1) == Blocks.forgottenDirt.blockID && par1World.getBlockLightValue(i1, j1 + 1, k1) >= 4 && par1World.getBlockLightOpacity(i1, j1 + 1, k1) <= 2)
+                       {
+                           par1World.setBlock(i1, j1, k1, Blocks.enchantedGrass.blockID);
+                       }
+                   }
+               }
+           }
        }
 }

@@ -35,6 +35,7 @@ import com.roboyobo.forgottenPlanet.mob.entity.EntityEmblazonedCreeper;
 import com.roboyobo.forgottenPlanet.mob.model.ModelEmblazonedCreeper;
 import com.roboyobo.forgottenPlanet.mob.render.RenderEmblazonedCreeper;
 import com.roboyobo.forgottenPlanet.proxy.CommonProxy;
+import com.roboyobo.forgottenPlanet.recipe.Recipes;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
@@ -79,7 +80,7 @@ public class ForgottenPlanet
     	   DimensionManager.registerDimension(dimension, dimension);
     	   Mobs.setMod(this);
     	   Mobs.initMobs();
-    	   
+    	   Recipes.initRecipes();
        }
 
 	

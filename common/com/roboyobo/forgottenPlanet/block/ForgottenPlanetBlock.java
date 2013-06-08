@@ -20,8 +20,7 @@ public class ForgottenPlanetBlock extends Block
        {
              super(id, par2Material);
              this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
-             this.setHardness(3F);
-             this.setResistance(5F);
+             this.setHardness(0.5F);
              this.setTickRandomly(true);
        }
        

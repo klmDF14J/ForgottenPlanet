@@ -12,6 +12,7 @@ import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
@@ -24,8 +25,7 @@ public class ForgottenLeaves extends Block
        {
              super(id, par2Material);
              this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
-             this.setHardness(3F);
-             this.setResistance(5F);
+             this.setHardness(0.2F);
              this.setTickRandomly(true);
             
        }
@@ -53,6 +53,14 @@ public class ForgottenLeaves extends Block
        
        public int tickRate(World par1World) {
     	   return 60;
+       }
+       
+       public int idDropped(int par1, Random par2Random, int par3) {
+    	   int num = par2Random.nextInt(5);
+    	   switch(num) {
+    	   case 0 : return Block.sapling.blockID;
+    	   default: return 0;
+    	   }
        }
        
        
