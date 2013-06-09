@@ -569,17 +569,13 @@ public class ForgottenPlanetChunkProvider implements IChunkProvider
             (new ForgottenPlanetEnchantedGrassPatch(Blocks.enchantedGrass.blockID)).generate(this.worldObj, this.rand, var12, var13, var14);
         }
 
-        if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, var11, LAVA) &&
+        if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, var11, LAKE) &&
                 !var11 && this.rand.nextInt(8) == 0)
         {
-            var12 = var4 + this.rand.nextInt(16) + 8;
-            var13 = this.rand.nextInt(this.rand.nextInt(120) + 8);
+        	var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = this.rand.nextInt(128);
             var14 = var5 + this.rand.nextInt(16) + 8;
-
-            if (var13 < 63 || this.rand.nextInt(10) == 0)
-            {
-                (new ForgottenPlanetEnchantedGrassPatch(Blocks.enchantedGrass.blockID)).generate(this.worldObj, this.rand, var12, var13, var14);
-            }
+            (new ForgottenPlanetEnchantedGrassPatch(Blocks.toxifiedGrass.blockID)).generate(this.worldObj, this.rand, var12, var13, var14);
         }
 
         boolean doGen = TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, var11, DUNGEON);

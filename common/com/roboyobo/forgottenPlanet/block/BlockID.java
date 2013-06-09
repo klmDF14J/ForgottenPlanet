@@ -9,6 +9,7 @@ public class BlockID {
 	public static int emblazonedLog = 183;
 	public static int emblazonedStone = 184;
 	public static int forgottenFuelOre = 185;
+	public static int toxifiedGrass = 186;
 	
 	
 	public static int forgottenSand = 3000;
@@ -19,9 +20,4 @@ public class BlockID {
 	public static int portalframe = 3005;
 	public static int emblazonedCobble = 3006;
 	public static int emblazonedStoneBrick = 3007;
-	
-	
-	
-	
-
 }

@@ -46,7 +46,7 @@ public class ForgottenPlanetBiomeDecorator extends BiomeDecorator
         this.gravelAsSandGen = new WorldGenSand(6, Block.gravel.blockID);
         this.dirtGen = new WorldGenMinable(Blocks.forgottenDirt.blockID, 32);
         this.gravelGen = new WorldGenMinable(Block.gravel.blockID, 32);
-        //this.coalGen = new WorldGenMinable(ForgottenPlanet.coalOre.blockID, 16, ForgottenPlanet..blockID);
+        this.coalGen = new WorldGenMinable(Blocks.emblazonedCoalOre.blockID, 16, Blocks.emblazonedCoalOre.blockID);
         //this.ironGen = new WorldGenMinable(ForgottenPlanet.ironOre.blockID, 8, ForgottenPlanet.stone.blockID);
         //this.goldGen = new WorldGenMinable(ForgottenPlanet.goldOre.blockID, 8, ForgottenPlanet.stone.blockID);
         //this.redstoneGen = new WorldGenMinable(AtumBlocks.redstoneOre.blockID, 7, AtumBlocks.stone.blockID);
@@ -61,7 +61,7 @@ public class ForgottenPlanetBiomeDecorator extends BiomeDecorator
         this.cactusGen = new WorldGenCactus();
         this.waterlilyGen = new WorldGenWaterlily();
         this.waterlilyPerChunk = 0;
-        this.treesPerChunk = 0;
+        this.treesPerChunk = 30;
         this.flowersPerChunk = 2;
         this.grassPerChunk = 1;
         this.deadBushPerChunk = 1;
@@ -144,8 +144,8 @@ public class ForgottenPlanetBiomeDecorator extends BiomeDecorator
 
         int l;
 
-        /*
-        doGen = TerrainGen.decorate(currentWorld, randomGenerator, chunk_X, chunk_Z, TREE);
+        
+        doGen = TerrainGen.decorate(currentWorld, randomGenerator, chunk_X, chunk_Z, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.TREE);
         i = (int) (this.randomGenerator.nextFloat() + 0.1);
         for (j = 0; doGen && j < i; ++j)
         {
@@ -155,8 +155,7 @@ public class ForgottenPlanetBiomeDecorator extends BiomeDecorator
             worldgenerator.setScale(1.0D, 1.0D, 1.0D);
             time = System.nanoTime();
             worldgenerator.generate(this.currentWorld, this.randomGenerator, k, this.currentWorld.getHeightValue(k, l), l);
-            //System.out.println("Gen Trees: " + (System.nanoTime() - time));
-        }*/
+        }
 
         int i1;
 

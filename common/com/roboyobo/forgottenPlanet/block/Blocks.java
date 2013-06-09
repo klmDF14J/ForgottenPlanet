@@ -12,8 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 
 public class Blocks {
-		public static Block emblazonedGrass;
-		public static Block enchantedGrass;
+		public static Block emblazonedGrass, enchantedGrass, toxifiedGrass;
 		public static Block forgottenSand;
 		public static Block forgottenDirt;
 		public static Block emblazonedLog;
@@ -29,6 +28,7 @@ public class Blocks {
     	public static void initBlocks() {
     		emblazonedGrass = new EmblazonedGrass(BlockID.emblazonedGrass, Material.grass).setUnlocalizedName("Emblazoned Grass");
     		enchantedGrass = new EnchantedGrass(BlockID.enchantedGrass, Material.grass).setUnlocalizedName("Enchanted Grass"); 
+    		toxifiedGrass = new ToxifiedGrass(BlockID.toxifiedGrass, Material.grass).setUnlocalizedName("Toxified Grass"); 
     		forgottenSand = new ForgottenPlanetBlock(BlockID.forgottenSand, Material.sand).setUnlocalizedName("Forgotten Sand");
     		forgottenDirt = new ForgottenPlanetBlock(BlockID.forgottenDirt, Material.grass).setUnlocalizedName("Forgotten Dirt");
     		emblazonedLog = new EnchantedLog(BlockID.emblazonedLog, Material.wood).setUnlocalizedName("Emblazoned Log");
@@ -45,6 +45,7 @@ public class Blocks {
     	public static void registerBlocks() {
     		GameRegistry.registerBlock(emblazonedGrass, ForgottenPlanet.modid + emblazonedGrass.getUnlocalizedName2());
             GameRegistry.registerBlock(enchantedGrass, ForgottenPlanet.modid + enchantedGrass.getUnlocalizedName2());
+            GameRegistry.registerBlock(toxifiedGrass, ForgottenPlanet.modid + toxifiedGrass.getUnlocalizedName2());
             GameRegistry.registerBlock(forgottenSand, ForgottenPlanet.modid + forgottenSand.getUnlocalizedName2());
             GameRegistry.registerBlock(forgottenDirt, ForgottenPlanet.modid + forgottenDirt.getUnlocalizedName2());
             GameRegistry.registerBlock(emblazonedLog, ForgottenPlanet.modid + emblazonedLog.getUnlocalizedName2());
@@ -61,12 +62,13 @@ public class Blocks {
     	public static void addNames() {
     		LanguageRegistry.addName(emblazonedGrass, "Emblazoned Grass");
             LanguageRegistry.addName(enchantedGrass, "Enchanted Grass");
+            LanguageRegistry.addName(toxifiedGrass, "Toxified Grass");
             LanguageRegistry.addName(forgottenSand, "Forgotten Sand");
             LanguageRegistry.addName(forgottenDirt, "Forgotten Dirt");
-            LanguageRegistry.addName(emblazonedLog, "Enchanted log");
-            LanguageRegistry.addName(forgottenLeaves1, "Forgotten Leaves");
-            LanguageRegistry.addName(forgottenLeaves2, "Forgotten Leaves");
-            LanguageRegistry.addName(forgottenLeaves3, "Forgotten Leaves");
+            LanguageRegistry.addName(emblazonedLog, "Emblazoned log");
+            LanguageRegistry.addName(forgottenLeaves1, "Emblazoned Leaves");
+            LanguageRegistry.addName(forgottenLeaves2, "Enchanted Leaves");
+            LanguageRegistry.addName(forgottenLeaves3, "Toxified Leaves");
             LanguageRegistry.addName(portal, "Forgotten Portal");
             LanguageRegistry.addName(new ItemStack(genericBlock, 1, 0), "Forgotten Portal Frame");
             LanguageRegistry.addName(new ItemStack(genericBlock, 1, 1), "Emblazoned Stone Brick");

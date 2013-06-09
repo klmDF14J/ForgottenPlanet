@@ -40,7 +40,7 @@ public class EmblazonedForestBiome extends BiomeGenBase
         this.theBiomeDecorator.generateLakes = true;
         this.abandonedHutGenerator = new ForgottenPlanetAbandonedHutGenerator();
         this.largeAbandonedHutGenerator = new ForgottenPlanetLargeAbandonedHutGenerator();
-        this.theBiomeDecorator.treesPerChunk = 10;
+        this.theBiomeDecorator.treesPerChunk = 15;
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
@@ -81,7 +81,7 @@ public class EmblazonedForestBiome extends BiomeGenBase
 
         long time;
 
-        if (par2Random.nextInt(10) == 0)
+        if (par2Random.nextInt(1) == 0)
         {
             int k = par3 + par2Random.nextInt(16) + 8;
             int l = par4 + par2Random.nextInt(16) + 8;
