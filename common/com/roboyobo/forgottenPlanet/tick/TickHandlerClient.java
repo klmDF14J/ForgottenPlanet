@@ -20,6 +20,9 @@ import cpw.mods.fml.common.TickType;
 public class TickHandlerClient
 	implements ITickHandler
 {
+	
+	
+	
 	@Override
 	public void tickStart(EnumSet<TickType> type, Object... tickData) {
 		
@@ -75,6 +78,7 @@ public class TickHandlerClient
 	public void renderTick(Minecraft mc, World world, float renderTick)
 	{
 	}
+	
 	
 	
 }

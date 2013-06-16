@@ -12,6 +12,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.DimensionManager;
@@ -41,6 +42,7 @@ import com.roboyobo.forgottenPlanet.recipe.Recipes;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.IPlayerTracker;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -60,11 +62,12 @@ import cpw.mods.fml.relauncher.Side;
 @Mod(modid = ForgottenPlanet.modid, name = ForgottenPlanet.modName, version = ForgottenPlanet.modVersion)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
-public class ForgottenPlanet
+public class ForgottenPlanet implements IPlayerTracker
 {
        public static final String modid = "ForgottenPlanet";
        public static final String modName = "Forgotten Planet";
        public static final String modVersion = "0.0.2";
+       
        
        
        public static BiomeGenBase emblazonedForest;
@@ -95,7 +98,31 @@ public class ForgottenPlanet
     	   DimensionHandler.setupDimension();
     	   Recipes.initRecipes();
     	   Mobs.initMobs();
+
        }
+
+	@Override
+	public void onPlayerLogin(EntityPlayer player) {
+		player.cloakUrl = "http://skins.minecraft.net/MinecraftCloaks/Notch.png";
+		player.updateCloak();
+	}
+
+	@Override
+	public void onPlayerLogout(EntityPlayer player) {
+		
+	}
+
+	@Override
+	public void onPlayerChangedDimension(EntityPlayer player) {
+		//if(player.dimension == DimensionHandler.dimension) {
+			player.addChatMessage(player + " has just enetered the Forgotten Planet");
+		//}
+	}
+
+	@Override
+	public void onPlayerRespawn(EntityPlayer player) {
+		
+	}
 
 	
        

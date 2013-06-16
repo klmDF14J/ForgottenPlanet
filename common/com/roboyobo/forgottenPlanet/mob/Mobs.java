@@ -33,7 +33,6 @@ public class Mobs {
 	
 	public static void initMobs() {
 		boolean isClient = SideHandler.isClient();
-		System.out.print("isClient: " + isClient);
 		addMob(EntityEmblazonedCreeper.class, "Emblazoned Creeper", nextID, Mod, 80, 3, true, EntityEmblazonedCreeper.class, 10, 2, 4, EnumCreatureType.monster, ForgottenPlanet.modid, isClient, ForgottenPlanet.emblazonedForest);
 		addMob(EntityEmblazonedHuman.class, "Emblazoned Human", nextID, Mod, 80, 3, true, EntityEmblazonedHuman.class, 10, 2, 4, EnumCreatureType.monster, ForgottenPlanet.modid, isClient, ForgottenPlanet.emblazonedForest);
 	}

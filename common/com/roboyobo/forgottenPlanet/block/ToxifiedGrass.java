@@ -89,4 +89,8 @@ public class ToxifiedGrass extends Block
     	   ((EntityLiving)par5Entity).addPotionEffect(new PotionEffect(Potion.poison.id, 200, 1));
        }
        
+       public int idDropped(int par1, Random par2Random, int par3) {
+    	   return Blocks.forgottenDirt.blockID;
+       }
+       
 }

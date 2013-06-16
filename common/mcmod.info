@@ -1,0 +1,17 @@
+[
+{
+  "modid": "ForgottenPlanet",
+  "name": "Forgotten Planet",
+  "description": "Explore The Forgotten Planet, An Abandoned & Mystical Realm",
+  "version": "v0.1",
+  "mcversion": "1.5.2",
+  "logoFile": "Logo.png",
+  "url": "http://sites.google.com/site/toxicguystudios/mods",
+  "updateUrl": "",
+  "authors": ["See http://sites.google.com/site/toxicguystudios/fpteam"],
+  "credits": "Brought To You By ToxicGuyStudios",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -15,6 +15,7 @@ import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.StringUtils;
 
 public class ClientProxy extends CommonProxy 
 {
@@ -47,6 +48,7 @@ public class ClientProxy extends CommonProxy
 	public void registerRenderThings() {
 		Mobs.renderMob(EntityEmblazonedCreeper.class, new RenderEmblazonedCreeper(new ModelEmblazonedCreeper(), 2.0F));
 		Mobs.renderMob(EntityEmblazonedHuman.class, new RenderEmblazonedHuman(new ModelEmblazonedHuman(), 2.0F));
+		
 	}
 
 	public void registerModelRenderers() 

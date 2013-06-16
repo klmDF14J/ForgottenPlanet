@@ -96,6 +96,8 @@ public class EmblazonedGrass extends Block
     	   par5Entity.setFire(10);
        }
            
-       
+       public int idDropped(int par1, Random par2Random, int par3) {
+    	   return Blocks.forgottenDirt.blockID;
+       }
        
 }

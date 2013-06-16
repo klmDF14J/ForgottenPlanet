@@ -18,7 +18,7 @@ public class Blocks {
 		public static Block forgottenDirt;
 		public static Block log1, log2, log3;
 		public static Block forgottenLeaves1, forgottenLeaves2, forgottenLeaves3;
-		public static Block portalFrame, plank1, plank2, plank3, brick1, brick2, brick3, dungeonCobble1, dungeonCobble2, dungeonCobble3;
+		public static Block portalFrame, plank1, plank2, plank3, brick1, brick2, brick3, dungeonCobble1, dungeonCobble2, dungeonCobble3, dungeonCobble4;
     	public static Block stone1, stone2, stone3, stone4; 
     	public static Block cobble1, cobble2, cobble3, cobble4;
     	public static Block emblazonedCoalOre, emlazonedDustOre, emblazonedGemOre;
@@ -53,9 +53,10 @@ public class Blocks {
     		brick2 = new ForgottenPlanetBlock(BlockID.brick2, Material.rock).setUnlocalizedName("Enchanted Brick");
     		brick3 = new ForgottenPlanetBlock(BlockID.brick3, Material.rock).setUnlocalizedName("Toxified Brick");
     		
-    		dungeonCobble1 = new ForgottenPlanetBlock(BlockID.dungeonCobble1, Material.rock).setUnlocalizedName("Emblazoned Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
-    		dungeonCobble2 = new ForgottenPlanetBlock(BlockID.dungeonCobble2, Material.rock).setUnlocalizedName("Enchanted Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
-    		dungeonCobble3 = new ForgottenPlanetBlock(BlockID.dungeonCobble3, Material.rock).setUnlocalizedName("Toxified Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
+    		dungeonCobble1 = new ForgottenPlanetBlock(BlockID.dungeonCobble1, Material.rock).setUnlocalizedName("Forgotten Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
+    		dungeonCobble2 = new ForgottenPlanetBlock(BlockID.dungeonCobble2, Material.rock).setUnlocalizedName("Emblazoned Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
+    		dungeonCobble3 = new ForgottenPlanetBlock(BlockID.dungeonCobble3, Material.rock).setUnlocalizedName("Enchanted Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
+    		dungeonCobble4 = new ForgottenPlanetBlock(BlockID.dungeonCobble4, Material.rock).setUnlocalizedName("Toxified Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
     		
     		stone1 = new ForgottenPlanetStoneBlock(BlockID.stone1, 0).setUnlocalizedName("Forgotten Stone");
     		stone2 = new ForgottenPlanetStoneBlock(BlockID.stone2, 1).setUnlocalizedName("Emblazoned Stone");
@@ -101,6 +102,7 @@ public class Blocks {
             GameRegistry.registerBlock(dungeonCobble1, ForgottenPlanet.modid + dungeonCobble1.getUnlocalizedName());
             GameRegistry.registerBlock(dungeonCobble2, ForgottenPlanet.modid + dungeonCobble2.getUnlocalizedName());
             GameRegistry.registerBlock(dungeonCobble3, ForgottenPlanet.modid + dungeonCobble3.getUnlocalizedName());
+            GameRegistry.registerBlock(dungeonCobble4, ForgottenPlanet.modid + dungeonCobble4.getUnlocalizedName());
             
             GameRegistry.registerBlock(stone1, ForgottenPlanet.modid + stone1.getUnlocalizedName());
             GameRegistry.registerBlock(stone2, ForgottenPlanet.modid + stone2.getUnlocalizedName());
@@ -143,9 +145,10 @@ public class Blocks {
             LanguageRegistry.addName(brick2, "Enchanted Brick");
             LanguageRegistry.addName(brick3, "Toxified Brick");
             
-            LanguageRegistry.addName(dungeonCobble1, "Emblazoned Dungeon Cobblestone");
-            LanguageRegistry.addName(dungeonCobble2, "Enchanted Dungeon Cobblestone");
-            LanguageRegistry.addName(dungeonCobble3, "Toxified Dungeon Cobblestone");
+            LanguageRegistry.addName(dungeonCobble1, "Forgotten Dungeon Cobblestone");
+            LanguageRegistry.addName(dungeonCobble2, "Emblazoned Dungeon Cobblestone");
+            LanguageRegistry.addName(dungeonCobble3, "Enchated Dungeon Cobblestone");
+            LanguageRegistry.addName(dungeonCobble4, "Toxified Dungeon Cobblestone");
             
             LanguageRegistry.addName(stone1, "Forgotten Stone");
             LanguageRegistry.addName(stone2, "Emblazoned Stone");

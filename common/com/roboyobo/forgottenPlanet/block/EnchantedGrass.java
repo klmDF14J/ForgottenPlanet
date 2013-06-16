@@ -86,4 +86,8 @@ public class EnchantedGrass extends Block
        public void onEntityWalking(World par1World, int par2, int par3, int par4, Entity par5Entity) {
     	   par5Entity.extinguish();
        }
+       
+       public int idDropped(int par1, Random par2Random, int par3) {
+    	   return Blocks.forgottenDirt.blockID;
+       }
 }

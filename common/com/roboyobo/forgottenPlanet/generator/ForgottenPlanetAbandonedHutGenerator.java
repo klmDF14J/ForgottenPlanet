@@ -22,12 +22,12 @@ public class ForgottenPlanetAbandonedHutGenerator extends WorldGenerator
 		generateUnderneath(i, j, k, world, Blocks.brick1.blockID, 10, 7);
 		clearInside(6, i, j, k, world, 10, 7);
 		generateFlatSurface(0, i, j, k, world, Blocks.brick1.blockID, 10, 7);
-		generate1WallLayer(1, i, j, k, world, Blocks.dungeonCobble1.blockID, 10, 7);
-		generate1WallLayer(2, i, j, k, world, Blocks.dungeonCobble1.blockID, 10, 7);
-		generate1WallLayer(3, i, j, k, world, Blocks.dungeonCobble1.blockID, 10, 7);
-		generate1WallLayer(4, i, j, k, world, Blocks.dungeonCobble1.blockID, 10, 7);
-		generateFlatSurface(5, i, j, k, world, Blocks.dungeonCobble1.blockID, 10, 7);
-		generateHutDoor(i, j, k, world, Blocks.dungeonCobble1.blockID, 0);
+		generate1WallLayer(1, i, j, k, world, Blocks.dungeonCobble2.blockID, 10, 7);
+		generate1WallLayer(2, i, j, k, world, Blocks.dungeonCobble2.blockID, 10, 7);
+		generate1WallLayer(3, i, j, k, world, Blocks.dungeonCobble2.blockID, 10, 7);
+		generate1WallLayer(4, i, j, k, world, Blocks.dungeonCobble2.blockID, 10, 7);
+		generateFlatSurface(5, i, j, k, world, Blocks.dungeonCobble2.blockID, 10, 7);
+		generateHutDoor(i, j, k, world, Blocks.dungeonCobble2.blockID, 0);
 		generateHutExtras(i, j, k, world, random);
 		
 		return false;
