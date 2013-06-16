@@ -12,6 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.gui.Particle;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
@@ -80,5 +81,9 @@ public class EnchantedGrass extends Block
                    }
                }
            }
+       }
+       
+       public void onEntityWalking(World par1World, int par2, int par3, int par4, Entity par5Entity) {
+    	   par5Entity.extinguish();
        }
 }

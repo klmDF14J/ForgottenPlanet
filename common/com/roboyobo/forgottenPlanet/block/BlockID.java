@@ -1,23 +1,69 @@
 package com.roboyobo.forgottenPlanet.block;
 
 public class BlockID {
+	private static int startID = 3000;
+	private static int idsCycled;
+	
+	/*
+	 * World Gen IDs. Need To Be < 256. Stone needs to be 180 for some reason.
+	 */
+	public static int stone1 = 230;
+	public static int stone2 = 231;
+	public static int stone3 = 232;
+	public static int stone4 = 233;
+	
+	public static int forgottenGrass = 234;
+	public static int emblazonedGrass = 235;
+	public static int enchantedGrass = 236;
+	public static int toxifiedGrass = 237;
+	
+	public static int forgottenDirt = 238;
+		
+	
+	/*
+	 * Normal Block IDs
+	 */
+	public static int forgottenSand = getNextID();
+	
+	public static int forgottenLeaves1 = getNextID();
+	public static int forgottenLeaves2 = getNextID();
+	public static int forgottenLeaves3 = getNextID();
+	
+	public static int portal = getNextID();
+	public static int portalframe = getNextID();
 
+	public static int emblazonedLog = getNextID();
+	public static int enchantedLog = getNextID();
+	public static int toxifiedLog = getNextID();
 	
-	public static int emblazonedGrass = 180;
-	public static int enchantedGrass = 181;
-	public static int forgottenDirt = 182;
-	public static int emblazonedLog = 183;
-	public static int emblazonedStone = 184;
-	public static int forgottenFuelOre = 185;
-	public static int toxifiedGrass = 186;
+	public static int emblazonedPlank = getNextID();
+	public static int enchantedPlank = getNextID();
+	public static int toxifiedPlank = getNextID();
 	
+	public static int brick1 = getNextID();
+	public static int brick2 = getNextID();
+	public static int brick3 = getNextID();
+	public static int brick4 = getNextID();
 	
-	public static int forgottenSand = 3000;
-	public static int forgottenLeaves1 = 3001;
-	public static int forgottenLeaves2 = 3002;
-	public static int forgottenLeaves3 = 3003;
-	public static int portal = 3004;
-	public static int portalframe = 3005;
-	public static int emblazonedCobble = 3006;
-	public static int emblazonedStoneBrick = 3007;
+	public static int dungeonCobble1 = getNextID();
+	public static int dungeonCobble2 = getNextID();
+	public static int dungeonCobble3 = getNextID();
+	public static int dungeonCobble4 = getNextID();
+	
+	public static int forgottenFuelOre = getNextID();
+	public static int forgottenDustOre = getNextID();
+	public static int forgottenGemOre = getNextID();
+	
+	public static int cobble1 = getNextID();
+	public static int cobble2 = getNextID();
+	public static int cobble3 = getNextID();
+	public static int cobble4 = getNextID();
+	
+	public static int getNextID() {
+		int id = startID + idsCycled;
+		idsCycled++;
+		return id;
+	}
+	
+
 }

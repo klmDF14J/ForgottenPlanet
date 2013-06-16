@@ -21,7 +21,7 @@ public void registerWorldChunkManager()
  {
   //this.worldChunkMgr = new WorldChunkManagerHell(ForgottenPlanet.emblazonedForest, 0.5F, 0.5F);
   this.worldChunkMgr = new ForgottenPlanetChunkManager(ForgottenPlanet.emblazonedForest);
-  this.dimensionId = ForgottenPlanet.dimension;
+  this.dimensionId = DimensionHandler.dimension;
  }
  
  public String getDimensionName() 
@@ -31,7 +31,7 @@ public void registerWorldChunkManager()
  
  public boolean canRespawnHere()
  {
-  return true;
+  return false;
  }
  
  @Override

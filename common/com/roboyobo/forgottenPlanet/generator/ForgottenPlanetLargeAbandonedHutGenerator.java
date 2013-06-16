@@ -20,21 +20,21 @@ public class ForgottenPlanetLargeAbandonedHutGenerator extends WorldGenerator
 	public boolean generate(World world, Random random, int i, int j, int k) {
 		j = j - 1;
 		
-		generateUnderneath(i, j, k, world, Blocks.emblazonedStone.blockID, 15, 15);
+		generateUnderneath(i, j, k, world, Blocks.dungeonCobble1.blockID, 15, 15);
 		clearInside(6, i, j, k, world, 15, 15);
-		generateFlatSurface(0, i, j, k, world, Blocks.emblazonedStone.blockID, 15, 15);
-		generate1WallLayer(1, i, j, k, world, Blocks.emblazonedCobble.blockID, 15, 15);
-		generate1WallLayer(2, i, j, k, world, Blocks.emblazonedCobble.blockID, 15, 15);
-		generate1WallLayer(3, i, j, k, world, Blocks.emblazonedCobble.blockID, 15, 15);
-		generate1WallLayer(4, i, j, k, world, Blocks.emblazonedCobble.blockID, 15, 15);
+		generateFlatSurface(0, i, j, k, world, Blocks.dungeonCobble1.blockID, 15, 15);
+		generate1WallLayer(1, i, j, k, world, Blocks.brick1.blockID, 15, 15);
+		generate1WallLayer(2, i, j, k, world, Blocks.brick1.blockID, 15, 15);
+		generate1WallLayer(3, i, j, k, world, Blocks.brick1.blockID, 15, 15);
+		generate1WallLayer(4, i, j, k, world, Blocks.brick1.blockID, 15, 15);
 		
-		generate1WallLayer(1, i, j, k + 8, world, Blocks.emblazonedCobble.blockID, 15, 7);
-		generate1WallLayer(2, i, j, k + 8, world, Blocks.emblazonedCobble.blockID, 15, 7);
-		generate1WallLayer(3, i, j, k + 8, world, Blocks.emblazonedCobble.blockID, 15, 7);
-		generate1WallLayer(4, i, j, k + 8, world, Blocks.emblazonedCobble.blockID, 15, 7);
-		generateFlatSurface(5, i, j, k, world, Blocks.emblazonedCobble.blockID, 15, 15);
-		generateHutDoor(i, j, k, world, Blocks.emblazonedStone.blockID, 0, 0, 0);
-		generateHutDoor(i, j, k, world, Blocks.emblazonedStone.blockID, 5, 0, 8);
+		generate1WallLayer(1, i, j, k + 8, world, Blocks.brick1.blockID, 15, 7);
+		generate1WallLayer(2, i, j, k + 8, world, Blocks.brick1.blockID, 15, 7);
+		generate1WallLayer(3, i, j, k + 8, world, Blocks.brick1.blockID, 15, 7);
+		generate1WallLayer(4, i, j, k + 8, world, Blocks.brick1.blockID, 15, 7);
+		generateFlatSurface(5, i, j, k, world, Blocks.brick1.blockID, 15, 15);
+		generateHutDoor(i, j, k, world, Blocks.dungeonCobble1.blockID, 0, 0, 0);
+		generateHutDoor(i, j, k, world, Blocks.dungeonCobble1.blockID, 5, 0, 8);
 		generateHutExtras(i, j, k, world, random);
 		return false;
 	}

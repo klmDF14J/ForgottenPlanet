@@ -24,7 +24,7 @@ public class ForgottenPlanetMultiBlock extends Block
        @SideOnly(Side.CLIENT)
        private Icon[] icons;
        
-       private int numOfBlocks = 2;
+       public static int numOfBlocks = 5;
       
        @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)

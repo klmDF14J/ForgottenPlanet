@@ -3,34 +3,33 @@ package com.roboyobo.forgottenPlanet.block;
 import java.util.Random;
 
 import com.roboyobo.forgottenPlanet.ForgottenPlanet;
-import com.roboyobo.forgottenPlanet.client.gui.ForgottenPlanetTab;
 import com.roboyobo.forgottenPlanet.client.gui.ParticleSpawner;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockGrass;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.gui.Particle;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
-public class EmblazonedGrass extends Block
+public class ForgottenGrass extends Block
 {
 	@SideOnly(Side.CLIENT)
 	public Icon topIcon;
 	public Icon bottomIcon;
 	public Icon sideIcon;
-	int numOfTimesRun = 0;
 	
-       public EmblazonedGrass(int id, Material par2Material)
+       public ForgottenGrass(int id, Material par2Material)
        {
              super(id, par2Material);
              this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
              this.setHardness(0.5F);
-             this.setTickRandomly(true);
        }
        
        @SideOnly(Side.CLIENT)
@@ -50,19 +49,9 @@ public class EmblazonedGrass extends Block
        }
        
        public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random) {
-    	   numOfTimesRun++;
-    	   if(numOfTimesRun == 5) {
-    	   ForgottenPlanetTab.tabNumber++;
-    	   numOfTimesRun = 0;
-    	   }
-    	   if(par1World.isRaining() == true) {
-    		   par1World.toggleRain();
-    	   }
     	   int rand = par5Random.nextInt(30);
     	   if(rand == 1) {
-    	   ParticleSpawner.spawnRandomParticle(par5Random, par1World, "reddust", par2, par3, par4, 255, 255, 0);
-    	   ParticleSpawner.spawnRandomParticle(par5Random, par1World, "reddust", par2, par3, par4, 255, 0, 0);
-    	   ParticleSpawner.spawnRandomParticle(par5Random, par1World, "lava", par2, par3, par4, 0, 0, 0);
+    	   ParticleSpawner.spawnRandomParticle(par5Random, par1World, "reddust", par2, par3, par4, 255, 255, 255);
     	   }
        }
        
@@ -85,17 +74,10 @@ public class EmblazonedGrass extends Block
 
                        if (par1World.getBlockId(i1, j1, k1) == Blocks.forgottenDirt.blockID && par1World.getBlockLightValue(i1, j1 + 1, k1) >= 4 && par1World.getBlockLightOpacity(i1, j1 + 1, k1) <= 2)
                        {
-                           par1World.setBlock(i1, j1, k1, Blocks.emblazonedGrass.blockID);
+                           par1World.setBlock(i1, j1, k1, Blocks.enchantedGrass.blockID);
                        }
                    }
                }
            }
        }
-       
-       public void onEntityWalking(World par1World, int par2, int par3, int par4, Entity par5Entity) {
-    	   par5Entity.setFire(10);
-       }
-           
-       
-       
 }

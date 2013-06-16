@@ -19,6 +19,8 @@ public class ForgottenOre extends Block {
 	public ForgottenOre(int par1, Material par2Material) {
 		super(par1, par2Material);
 		this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
+		this.setHardness(1.5F);
+        this.setResistance(5F);
 	}
 	
 	public int idDropped(int par1, Random par2Random, int par3) {

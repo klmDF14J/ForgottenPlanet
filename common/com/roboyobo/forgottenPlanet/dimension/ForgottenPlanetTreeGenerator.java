@@ -147,7 +147,7 @@ public class ForgottenPlanetTreeGenerator extends WorldGenerator
 
                         if (k1 == 0 || block == null || block.isLeaves(par1World, par3, par4 + j1, par5))
                         {
-                            this.setBlockAndMetadata(par1World, par3, par4 + j1, par5, Blocks.emblazonedLog.blockID, this.metaWood);
+                            this.setBlockAndMetadata(par1World, par3, par4 + j1, par5, Blocks.log1.blockID, this.metaWood);
 
                             if (this.vinesGrow && j1 > 0)
                             {

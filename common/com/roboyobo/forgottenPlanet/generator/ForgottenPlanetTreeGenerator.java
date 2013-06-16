@@ -44,17 +44,15 @@ public class ForgottenPlanetTreeGenerator extends WorldGenerator
     public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)
     {
        int blockID = 0;
-       boolean canGen = false;
+       int logID = 0;
+       boolean canGen = true;
+       int[] blocks = {Blocks.forgottenLeaves1.blockID, Blocks.forgottenLeaves2.blockID, Blocks.forgottenLeaves3.blockID};
+       int[] logs = {Blocks.log1.blockID, Blocks.log2.blockID, Blocks.log3.blockID};
        
-       if(par1World.getBlockId(par3, par4 - 1, par5) == Blocks.emblazonedGrass.blockID) {
-    	   canGen = true;
-    	   blockID = Blocks.forgottenLeaves1.blockID;
-       }
        
-       if(par1World.getBlockId(par3, par4 - 1, par5) == Blocks.enchantedGrass.blockID) {
-    	   canGen = true;
-    	   blockID = Blocks.forgottenLeaves2.blockID;
-       }
+       int rand = par2Random.nextInt(3);
+       blockID = blocks[rand];
+       logID = logs[rand];
        
        if(canGen) { 
     	   for(int var1 = 0; var1 < 5; var1++) {
@@ -91,7 +89,7 @@ public class ForgottenPlanetTreeGenerator extends WorldGenerator
        
        
        	   for(int var10 = 0; var10 <= 7; var10++) {
-       		   par1World.setBlock(par3, par4 + var10, par5, Blocks.emblazonedLog.blockID);
+       		   par1World.setBlock(par3, par4 + var10, par5, logID);
        	   }
        }
        	return true;

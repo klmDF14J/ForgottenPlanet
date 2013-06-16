@@ -9,6 +9,7 @@ public class ForgottenPlanetMultiBlockItem extends ItemBlock
        {
              super(par1);
              setHasSubtypes(true);
+             setMaxDamage(0);
        }
       
        public String getUnlocalizedName(ItemStack itemstack)
@@ -24,4 +25,6 @@ public class ForgottenPlanetMultiBlockItem extends ItemBlock
        {
              return par1;
        }
+       
+       
 }

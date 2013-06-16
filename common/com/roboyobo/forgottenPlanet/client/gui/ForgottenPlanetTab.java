@@ -21,7 +21,7 @@ public class ForgottenPlanetTab extends CreativeTabs{
 			tabNumber = 0;
 		}
 		switch(tabNumber) {
-		case 0 : return Blocks.emblazonedGrass.blockID;
+		case 0 : return Blocks.forgottenGrass.blockID;
 		case 1 : return Blocks.enchantedGrass.blockID;
 		default : return Block.bedrock.blockID;
 		}

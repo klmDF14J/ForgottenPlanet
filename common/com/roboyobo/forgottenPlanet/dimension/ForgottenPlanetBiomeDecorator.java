@@ -46,7 +46,6 @@ public class ForgottenPlanetBiomeDecorator extends BiomeDecorator
         this.gravelAsSandGen = new WorldGenSand(6, Block.gravel.blockID);
         this.dirtGen = new WorldGenMinable(Blocks.forgottenDirt.blockID, 32);
         this.gravelGen = new WorldGenMinable(Block.gravel.blockID, 32);
-        this.coalGen = new WorldGenMinable(Blocks.emblazonedCoalOre.blockID, 16, Blocks.emblazonedCoalOre.blockID);
         //this.ironGen = new WorldGenMinable(ForgottenPlanet.ironOre.blockID, 8, ForgottenPlanet.stone.blockID);
         //this.goldGen = new WorldGenMinable(ForgottenPlanet.goldOre.blockID, 8, ForgottenPlanet.stone.blockID);
         //this.redstoneGen = new WorldGenMinable(AtumBlocks.redstoneOre.blockID, 7, AtumBlocks.stone.blockID);

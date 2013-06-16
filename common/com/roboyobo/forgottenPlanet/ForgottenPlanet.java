@@ -26,6 +26,7 @@ import com.roboyobo.forgottenPlanet.block.ForgottenPlanetBlock;
 import com.roboyobo.forgottenPlanet.block.ForgottenPlanetStoneBlock;
 import com.roboyobo.forgottenPlanet.block.ForgottenPortal;
 import com.roboyobo.forgottenPlanet.client.gui.ForgottenPlanetTab;
+import com.roboyobo.forgottenPlanet.dimension.DimensionHandler;
 import com.roboyobo.forgottenPlanet.dimension.EmblazonedForestBiome;
 import com.roboyobo.forgottenPlanet.dimension.ForgottenLootGenerator;
 import com.roboyobo.forgottenPlanet.dimension.ForgottenPlanetWorldProvider;
@@ -35,13 +36,21 @@ import com.roboyobo.forgottenPlanet.mob.entity.EntityEmblazonedCreeper;
 import com.roboyobo.forgottenPlanet.mob.model.ModelEmblazonedCreeper;
 import com.roboyobo.forgottenPlanet.mob.render.RenderEmblazonedCreeper;
 import com.roboyobo.forgottenPlanet.proxy.CommonProxy;
+import com.roboyobo.forgottenPlanet.proxy.SideHandler;
 import com.roboyobo.forgottenPlanet.recipe.Recipes;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.Mod.ServerStarted;
+import cpw.mods.fml.common.Mod.ServerStarting;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -56,7 +65,7 @@ public class ForgottenPlanet
        public static final String modid = "ForgottenPlanet";
        public static final String modName = "Forgotten Planet";
        public static final String modVersion = "0.0.2";
-       public static int dimension = 20;
+       
        
        public static BiomeGenBase emblazonedForest;
        static int startEntityId = 300;
@@ -65,22 +74,27 @@ public class ForgottenPlanet
        
        @SidedProxy(clientSide = "com.roboyobo.forgottenPlanet.proxy.ClientProxy", serverSide = "com.roboyobo.forgottenPlanet.proxy.CommonProxy")
        public static CommonProxy proxy;
-	public static boolean portalHasSpawned = false;
-	public static byte stoneGen = (byte) BlockID.emblazonedStone;
-      
+	   public static boolean portalHasSpawned = false;
+	   public static byte stoneGen = (byte) BlockID.stone1;
+	   
+	   @Instance
+	   public static ForgottenPlanet mod;
+
        @Init
        public void load(FMLInitializationEvent event)
        {
-    	  // proxy.initTickHandlers();
+           initAll();
+       }
+       
+       private void initAll() {
+    	   proxy.registerRenderThings();
     	   Blocks.setupBlocks();
     	   Items.setupItems();
+    	   emblazonedForest = new EmblazonedForestBiome(23).setBiomeName("Forgotten Planet").setMinMaxHeight(0.2F, 1F).setTemperatureRainfall(1F, 0F);
     	   ForgottenLootGenerator.init();
-           emblazonedForest = new EmblazonedForestBiome(23).setBiomeName("Emblazoned Forest").setMinMaxHeight(0.2F, 1F).setTemperatureRainfall(1F, 0F);
-           DimensionManager.registerProviderType(dimension, ForgottenPlanetWorldProvider.class, false);
-    	   DimensionManager.registerDimension(dimension, dimension);
-    	   Mobs.setMod(this);
-    	   Mobs.initMobs();
+    	   DimensionHandler.setupDimension();
     	   Recipes.initRecipes();
+    	   Mobs.initMobs();
        }
 
 	

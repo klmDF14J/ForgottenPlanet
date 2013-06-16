@@ -5,6 +5,7 @@ import java.util.Random;
 
 import com.roboyobo.forgottenPlanet.ForgottenPlanet;
 import com.roboyobo.forgottenPlanet.ForgottenPlanetFileWriter;
+import com.roboyobo.forgottenPlanet.dimension.DimensionHandler;
 import com.roboyobo.forgottenPlanet.dimension.ForgottenPlanetTeleporter;
 
 import cpw.mods.fml.relauncher.Side;
@@ -39,12 +40,12 @@ public class ForgottenPortal extends BlockPortal
      byte var5 = 0;
      byte var6 = 0;
 
-     if (par1World.getBlockId(par2 - 1, par3, par4) == Blocks.genericBlock.blockID || par1World.getBlockId(par2 + 1, par3, par4) == Blocks.genericBlock.blockID)
+     if (par1World.getBlockId(par2 - 1, par3, par4) == Blocks.portalFrame.blockID || par1World.getBlockId(par2 + 1, par3, par4) == Blocks.portalFrame.blockID)
      {
          var5 = 1;
      }
 
-     if (par1World.getBlockId(par2, par3, par4 - 1) == Blocks.genericBlock.blockID || par1World.getBlockId(par2, par3, par4 + 1) == Blocks.genericBlock.blockID)
+     if (par1World.getBlockId(par2, par3, par4 - 1) == Blocks.portalFrame.blockID || par1World.getBlockId(par2, par3, par4 + 1) == Blocks.portalFrame.blockID)
      {
          var6 = 1;
      }
@@ -76,7 +77,7 @@ public class ForgottenPortal extends BlockPortal
 
                      if (var9)
                      {
-                         if (var10 != Blocks.genericBlock.blockID)
+                         if (var10 != Blocks.portalFrame.blockID)
                          {
                              return false;
                          }
@@ -107,10 +108,10 @@ public class ForgottenPortal extends BlockPortal
    if (par5Entity instanceof EntityPlayerMP)
    {
     EntityPlayerMP thePlayer = (EntityPlayerMP) par5Entity;
-    if (par5Entity.dimension != ForgottenPlanet.dimension)
+    if (par5Entity.dimension != DimensionHandler.dimension)
     {
     
-     thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, ForgottenPlanet.dimension, new ForgottenPlanetTeleporter(thePlayer.mcServer.worldServerForDimension(ForgottenPlanet.dimension)));
+     thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, DimensionHandler.dimension, new ForgottenPlanetTeleporter(thePlayer.mcServer.worldServerForDimension(DimensionHandler.dimension)));
      try {
     		ForgottenPlanetFileWriter.saveObjectToFile("Forgotten Planet", new String("portalGenerated = true"));
     	} catch (IOException e) {
@@ -148,7 +149,7 @@ public class ForgottenPortal extends BlockPortal
    ;
   }
 
-   if (par1World.getBlockId(par2, var8 - 1, par4) != Blocks.genericBlock.blockID)
+   if (par1World.getBlockId(par2, var8 - 1, par4) != Blocks.portalFrame.blockID)
   {
 	   par1World.scheduleBlockUpdate(par2, par3, par4, 0, 0);
 	   
@@ -162,7 +163,7 @@ public class ForgottenPortal extends BlockPortal
     ;
    }
 
-    if (var9 == 3 && par1World.getBlockId(par2, var8 + var9, par4) == Blocks.genericBlock.blockID)
+    if (var9 == 3 && par1World.getBlockId(par2, var8 + var9, par4) == Blocks.portalFrame.blockID)
    {
     boolean var10 = par1World.getBlockId(par2 - 1, par3, par4) == this.blockID || par1World.getBlockId(par2 + 1, par3, par4) == this.blockID;
     boolean var11 = par1World.getBlockId(par2, par3, par4 - 1) == this.blockID || par1World.getBlockId(par2, par3, par4 + 1) == this.blockID;
@@ -173,7 +174,7 @@ public class ForgottenPortal extends BlockPortal
     }
     else
     {
-     if ((par1World.getBlockId(par2 + var6, par3, par4 + var7) != Blocks.genericBlock.blockID || par1World.getBlockId(par2 - var6, par3, par4 - var7) != this.blockID) && (par1World.getBlockId(par2 - var6, par3, par4 - var7) != Blocks.genericBlock.blockID || par1World.getBlockId(par2 + var6, par3, par4 + var7) != this.blockID))
+     if ((par1World.getBlockId(par2 + var6, par3, par4 + var7) != Blocks.portalFrame.blockID || par1World.getBlockId(par2 - var6, par3, par4 - var7) != this.blockID) && (par1World.getBlockId(par2 - var6, par3, par4 - var7) != Blocks.portalFrame.blockID || par1World.getBlockId(par2 + var6, par3, par4 + var7) != this.blockID))
      {
      // par1World.setBlock(par2, par3, par4, 0);
      }

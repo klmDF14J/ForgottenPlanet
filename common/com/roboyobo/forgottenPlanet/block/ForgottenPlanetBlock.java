@@ -44,7 +44,7 @@ public class ForgottenPlanetBlock extends Block
 		int portalFramesDiscovered = 0;
 		for(int i = 0; i < 3; i++) {
 			for(int j = 0; j < 4; j++) {
-				if(par5World.getBlockId(par2 + i, par3 + j, par4) == Blocks.genericBlock.blockID) {
+				if(par5World.getBlockId(par2 + i, par3 + j, par4) == Blocks.portalFrame.blockID) {
 					portalFramesDiscovered++;
 				}
 			}

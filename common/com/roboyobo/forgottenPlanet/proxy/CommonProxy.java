@@ -2,6 +2,7 @@ package com.roboyobo.forgottenPlanet.proxy;
 
 import java.io.File;
 
+import com.roboyobo.forgottenPlanet.mob.Mobs;
 import com.roboyobo.forgottenPlanet.tick.TickHandlerClient;
 
 public class CommonProxy 
@@ -22,7 +23,6 @@ public class CommonProxy
 	}
 
 	public void registerRenderThings() {
-		// TODO Auto-generated method stub
 		
 	}
 	

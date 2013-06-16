@@ -12,6 +12,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockGrass;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
@@ -81,6 +85,8 @@ public class ToxifiedGrass extends Block
            }
        }
            
-       
+       public void onEntityWalking(World par1World, int par2, int par3, int par4, Entity par5Entity) {
+    	   ((EntityLiving)par5Entity).addPotionEffect(new PotionEffect(Potion.poison.id, 200, 1));
+       }
        
 }

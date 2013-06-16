@@ -19,15 +19,15 @@ public class ForgottenPlanetAbandonedHutGenerator extends WorldGenerator
 	@Override
 	public boolean generate(World world, Random random, int i, int j, int k) {
 		j = j - 1;
-		generateUnderneath(i, j, k, world, Blocks.emblazonedCobble.blockID, 10, 7);
+		generateUnderneath(i, j, k, world, Blocks.brick1.blockID, 10, 7);
 		clearInside(6, i, j, k, world, 10, 7);
-		generateFlatSurface(0, i, j, k, world, Blocks.emblazonedCobble.blockID, 10, 7);
-		generate1WallLayer(1, i, j, k, world, Blocks.emblazonedStone.blockID, 10, 7);
-		generate1WallLayer(2, i, j, k, world, Blocks.emblazonedStone.blockID, 10, 7);
-		generate1WallLayer(3, i, j, k, world, Blocks.emblazonedStone.blockID, 10, 7);
-		generate1WallLayer(4, i, j, k, world, Blocks.emblazonedStone.blockID, 10, 7);
-		generateFlatSurface(5, i, j, k, world, Blocks.emblazonedStone.blockID, 10, 7);
-		generateHutDoor(i, j, k, world, Blocks.genericBlock.blockID, 0);
+		generateFlatSurface(0, i, j, k, world, Blocks.brick1.blockID, 10, 7);
+		generate1WallLayer(1, i, j, k, world, Blocks.dungeonCobble1.blockID, 10, 7);
+		generate1WallLayer(2, i, j, k, world, Blocks.dungeonCobble1.blockID, 10, 7);
+		generate1WallLayer(3, i, j, k, world, Blocks.dungeonCobble1.blockID, 10, 7);
+		generate1WallLayer(4, i, j, k, world, Blocks.dungeonCobble1.blockID, 10, 7);
+		generateFlatSurface(5, i, j, k, world, Blocks.dungeonCobble1.blockID, 10, 7);
+		generateHutDoor(i, j, k, world, Blocks.dungeonCobble1.blockID, 0);
 		generateHutExtras(i, j, k, world, random);
 		
 		return false;
@@ -39,7 +39,6 @@ public class ForgottenPlanetAbandonedHutGenerator extends WorldGenerator
 		boolean missingBlock = true;
 		
 		for(int var1 = 0; var1 < 20; var1++) {
-			System.out.println("At: " + var1);
 			for(int var2 = 0; var2 < length; var2++) {
 				for(int var3 = 0; var3 < width; var3++) {
 					if(world.getBlockId(i + var2, j - var1, k + var3) == 0 || world.getBlockId(i + var2, j - var1, k + var3) == Block.waterStill.blockID || world.getBlockId(i + var2, j - var1, k + var3) == Block.lavaStill.blockID || world.getBlockId(i + var2, j - var1, k + var3) == Block.waterMoving.blockID || world.getBlockId(i + var2, j - var1, k + var3) == Block.lavaMoving.blockID) {

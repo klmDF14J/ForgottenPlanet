@@ -13,11 +13,14 @@ import net.minecraft.util.Icon;
 
 public class ForgottenPlanetStoneBlock extends Block {
 
-	public ForgottenPlanetStoneBlock(int i) {
+	private int id;
+	
+	public ForgottenPlanetStoneBlock(int i, int ID) {
 		super(i, Material.rock);
 		this.setHardness(1.5F);
         this.setResistance(5F);
         this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
+        id = ID;
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -31,7 +34,8 @@ public class ForgottenPlanetStoneBlock extends Block {
     }
     
     public int idDropped(int par1, Random par2Random, int par3) {
-		return Blocks.emblazonedCobble.blockID;
+    	Block[] blocks = {Blocks.cobble1, Blocks.cobble2, Blocks.cobble3, Blocks.cobble4};
+		return blocks[id].blockID;
     }
 
 }
