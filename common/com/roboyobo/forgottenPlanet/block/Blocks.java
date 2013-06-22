@@ -2,6 +2,8 @@ package com.roboyobo.forgottenPlanet.block;
 
 import com.roboyobo.forgottenPlanet.ForgottenPlanet;
 import com.roboyobo.forgottenPlanet.item.ForgottenPlanetMultiBlockItem;
+import com.roboyobo.forgottenPlanet.item.ItemID;
+import com.roboyobo.forgottenPlanet.item.Items;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -21,54 +23,58 @@ public class Blocks {
 		public static Block portalFrame, plank1, plank2, plank3, brick1, brick2, brick3, dungeonCobble1, dungeonCobble2, dungeonCobble3, dungeonCobble4;
     	public static Block stone1, stone2, stone3, stone4; 
     	public static Block cobble1, cobble2, cobble3, cobble4;
-    	public static Block emblazonedCoalOre, emlazonedDustOre, emblazonedGemOre;
+    	public static Block forgottenFuelOre, forgottenDustOre;
+    	public static Block flower1;
     	public static ForgottenPortal portal;
 	   
     	
     	public static void initBlocks() {
-    		emblazonedGrass = new EmblazonedGrass(BlockID.emblazonedGrass, Material.grass).setUnlocalizedName("Emblazoned Grass");
-    		enchantedGrass = new EnchantedGrass(BlockID.enchantedGrass, Material.grass).setUnlocalizedName("Enchanted Grass"); 
-    		toxifiedGrass = new ToxifiedGrass(BlockID.toxifiedGrass, Material.grass).setUnlocalizedName("Toxified Grass"); 
-    		forgottenGrass = new ForgottenGrass(BlockID.forgottenGrass, Material.grass).setUnlocalizedName("Forgotten Grass");
+    		emblazonedGrass = new EmblazonedGrass(BlockID.emblazonedGrass, Material.grass).setUnlocalizedName("Emblazoned Grass").setStepSound(Block.soundGrassFootstep);
+    		enchantedGrass = new EnchantedGrass(BlockID.enchantedGrass, Material.grass).setUnlocalizedName("Enchanted Grass").setStepSound(Block.soundGrassFootstep); 
+    		toxifiedGrass = new ToxifiedGrass(BlockID.toxifiedGrass, Material.grass).setUnlocalizedName("Toxified Grass").setStepSound(Block.soundGrassFootstep); 
+    		forgottenGrass = new ForgottenGrass(BlockID.forgottenGrass, Material.grass).setUnlocalizedName("Forgotten Grass").setStepSound(Block.soundGrassFootstep);
     		
-    		forgottenSand = new ForgottenPlanetBlock(BlockID.forgottenSand, Material.sand).setUnlocalizedName("Forgotten Sand");
-    		forgottenDirt = new ForgottenPlanetBlock(BlockID.forgottenDirt, Material.grass).setUnlocalizedName("Forgotten Dirt");
+    		forgottenSand = new ForgottenPlanetBlock(BlockID.forgottenSand, Material.sand).setUnlocalizedName("Forgotten Sand").setStepSound(Block.soundSandFootstep);
+    		forgottenDirt = new ForgottenPlanetBlock(BlockID.forgottenDirt, Material.grass).setUnlocalizedName("Forgotten Dirt").setStepSound(Block.soundGrassFootstep);
     		
-    		log1 = new EnchantedLog(BlockID.emblazonedLog, Material.wood).setUnlocalizedName("Emblazoned Log");
-    		log2 = new EnchantedLog(BlockID.enchantedLog, Material.wood).setUnlocalizedName("Enchanted Log");
-    		log3 = new EnchantedLog(BlockID.toxifiedLog, Material.wood).setUnlocalizedName("Toxified Log");
+    		log1 = new EnchantedLog(BlockID.emblazonedLog, Material.wood).setUnlocalizedName("Emblazoned Log").setStepSound(Block.soundWoodFootstep);
+    		log2 = new EnchantedLog(BlockID.enchantedLog, Material.wood).setUnlocalizedName("Enchanted Log").setStepSound(Block.soundWoodFootstep);
+    		log3 = new EnchantedLog(BlockID.toxifiedLog, Material.wood).setUnlocalizedName("Toxified Log").setStepSound(Block.soundWoodFootstep);
     		
-    		forgottenLeaves1 = new ForgottenLeaves(BlockID.forgottenLeaves1, Material.leaves).setUnlocalizedName("Emblazoned Leaves");
-    		forgottenLeaves2 = new ForgottenLeaves(BlockID.forgottenLeaves2, Material.leaves).setUnlocalizedName("Enchanted Leaves");
-    		forgottenLeaves3 = new ForgottenLeaves(BlockID.forgottenLeaves3, Material.leaves).setUnlocalizedName("Toxified Leaves");
+    		forgottenLeaves1 = new ForgottenLeaves(BlockID.forgottenLeaves1).setUnlocalizedName("Emblazoned Leaves").setStepSound(Block.soundGrassFootstep);
+    		forgottenLeaves2 = new ForgottenLeaves(BlockID.forgottenLeaves2).setUnlocalizedName("Enchanted Leaves").setStepSound(Block.soundGrassFootstep);
+    		forgottenLeaves3 = new ForgottenLeaves(BlockID.forgottenLeaves3).setUnlocalizedName("Toxified Leaves").setStepSound(Block.soundGrassFootstep);
     		
     		portal = (ForgottenPortal) new ForgottenPortal(BlockID.portal, 0).setUnlocalizedName("Portal");
-    		portalFrame = new ForgottenPlanetBlock(BlockID.portalframe, Material.rock).setUnlocalizedName("Portal Frame");
+    		portalFrame = new ForgottenPlanetBlock(BlockID.portalframe, Material.rock).setUnlocalizedName("Portal Frame").setStepSound(Block.soundMetalFootstep);
     		
-    		plank1 = new ForgottenPlanetBlock(BlockID.emblazonedPlank, Material.wood).setUnlocalizedName("Emblazoned Planks");
-    		plank2 = new ForgottenPlanetBlock(BlockID.enchantedPlank, Material.wood).setUnlocalizedName("Enchanted Planks");
-    		plank3 = new ForgottenPlanetBlock(BlockID.toxifiedPlank, Material.wood).setUnlocalizedName("Toxified Planks");
+    		plank1 = new ForgottenPlanetBlock(BlockID.emblazonedPlank, Material.wood).setUnlocalizedName("Emblazoned Planks").setStepSound(Block.soundWoodFootstep);
+    		plank2 = new ForgottenPlanetBlock(BlockID.enchantedPlank, Material.wood).setUnlocalizedName("Enchanted Planks").setStepSound(Block.soundWoodFootstep);
+    		plank3 = new ForgottenPlanetBlock(BlockID.toxifiedPlank, Material.wood).setUnlocalizedName("Toxified Planks").setStepSound(Block.soundWoodFootstep);
     		
-    		brick1 = new ForgottenPlanetBlock(BlockID.brick1, Material.rock).setUnlocalizedName("Emblazoned Brick");
-    		brick2 = new ForgottenPlanetBlock(BlockID.brick2, Material.rock).setUnlocalizedName("Enchanted Brick");
-    		brick3 = new ForgottenPlanetBlock(BlockID.brick3, Material.rock).setUnlocalizedName("Toxified Brick");
+    		brick1 = new ForgottenPlanetBlock(BlockID.brick1, Material.rock).setUnlocalizedName("Emblazoned Brick").setStepSound(Block.soundStoneFootstep);
+    		brick2 = new ForgottenPlanetBlock(BlockID.brick2, Material.rock).setUnlocalizedName("Enchanted Brick").setStepSound(Block.soundStoneFootstep);
+    		brick3 = new ForgottenPlanetBlock(BlockID.brick3, Material.rock).setUnlocalizedName("Toxified Brick").setStepSound(Block.soundStoneFootstep);
     		
-    		dungeonCobble1 = new ForgottenPlanetBlock(BlockID.dungeonCobble1, Material.rock).setUnlocalizedName("Forgotten Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
-    		dungeonCobble2 = new ForgottenPlanetBlock(BlockID.dungeonCobble2, Material.rock).setUnlocalizedName("Emblazoned Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
-    		dungeonCobble3 = new ForgottenPlanetBlock(BlockID.dungeonCobble3, Material.rock).setUnlocalizedName("Enchanted Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
-    		dungeonCobble4 = new ForgottenPlanetBlock(BlockID.dungeonCobble4, Material.rock).setUnlocalizedName("Toxified Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F);
+    		dungeonCobble1 = new ForgottenPlanetBlock(BlockID.dungeonCobble1, Material.rock).setUnlocalizedName("Forgotten Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F).setStepSound(Block.soundStoneFootstep);
+    		dungeonCobble2 = new ForgottenPlanetBlock(BlockID.dungeonCobble2, Material.rock).setUnlocalizedName("Emblazoned Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F).setStepSound(Block.soundStoneFootstep);
+    		dungeonCobble3 = new ForgottenPlanetBlock(BlockID.dungeonCobble3, Material.rock).setUnlocalizedName("Enchanted Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F).setStepSound(Block.soundStoneFootstep);
+    		dungeonCobble4 = new ForgottenPlanetBlock(BlockID.dungeonCobble4, Material.rock).setUnlocalizedName("Toxified Dungeon Cobble").setBlockUnbreakable().setResistance(6000000.0F).setStepSound(Block.soundStoneFootstep);
     		
-    		stone1 = new ForgottenPlanetStoneBlock(BlockID.stone1, 0).setUnlocalizedName("Forgotten Stone");
-    		stone2 = new ForgottenPlanetStoneBlock(BlockID.stone2, 1).setUnlocalizedName("Emblazoned Stone");
-    		stone3 = new ForgottenPlanetStoneBlock(BlockID.stone3, 2).setUnlocalizedName("Enchanted Stone");
-    		stone4 = new ForgottenPlanetStoneBlock(BlockID.stone4, 3).setUnlocalizedName("Toxified Stone");
+    		stone1 = new ForgottenPlanetStoneBlock(BlockID.stone1, 0).setUnlocalizedName("Forgotten Stone").setStepSound(Block.soundStoneFootstep);
+    		stone2 = new ForgottenPlanetStoneBlock(BlockID.stone2, 1).setUnlocalizedName("Emblazoned Stone").setStepSound(Block.soundStoneFootstep);
+    		stone3 = new ForgottenPlanetStoneBlock(BlockID.stone3, 2).setUnlocalizedName("Enchanted Stone").setStepSound(Block.soundStoneFootstep);
+    		stone4 = new ForgottenPlanetStoneBlock(BlockID.stone4, 3).setUnlocalizedName("Toxified Stone").setStepSound(Block.soundStoneFootstep);
     		
-    		cobble1 = new ForgottenPlanetBlock(BlockID.cobble1, Material.rock).setUnlocalizedName("Forgotten Cobble");
-    		cobble2 = new ForgottenPlanetBlock(BlockID.cobble2, Material.rock).setUnlocalizedName("Emblazoned Cobble");
-    		cobble3 = new ForgottenPlanetBlock(BlockID.cobble3, Material.rock).setUnlocalizedName("Enchanted Cobble");
-    		cobble4 = new ForgottenPlanetBlock(BlockID.cobble4, Material.rock).setUnlocalizedName("Toxified Cobble");
+    		cobble1 = new ForgottenPlanetBlock(BlockID.cobble1, Material.rock).setUnlocalizedName("Forgotten Cobble").setStepSound(Block.soundStoneFootstep);
+    		cobble2 = new ForgottenPlanetBlock(BlockID.cobble2, Material.rock).setUnlocalizedName("Emblazoned Cobble").setStepSound(Block.soundStoneFootstep);
+    		cobble3 = new ForgottenPlanetBlock(BlockID.cobble3, Material.rock).setUnlocalizedName("Enchanted Cobble").setStepSound(Block.soundStoneFootstep);
+    		cobble4 = new ForgottenPlanetBlock(BlockID.cobble4, Material.rock).setUnlocalizedName("Toxified Cobble").setStepSound(Block.soundStoneFootstep);
     		
-    		emblazonedCoalOre = new ForgottenOre(BlockID.forgottenFuelOre, Material.rock).setUnlocalizedName("Emblazoned Fuel");
+    		forgottenFuelOre = new ForgottenOre(BlockID.forgottenFuelOre, Material.rock, Items.forgottenFuel.itemID).setUnlocalizedName("Forgotten Fuel Ore").setStepSound(Block.soundStoneFootstep);
+    		forgottenDustOre = new ForgottenOre(BlockID.forgottenDustOre, Material.rock, Items.forgottenDust.itemID).setUnlocalizedName("Forgotten Dust Ore").setStepSound(Block.soundStoneFootstep);
+    	
+    		flower1 = new ForgottenFlower(BlockID.flower1, Material.leaves).setUnlocalizedName("Forgotten Flower").setStepSound(Block.soundGrassFootstep);
     	}
     	
     	public static void registerBlocks() {
@@ -114,7 +120,10 @@ public class Blocks {
             GameRegistry.registerBlock(cobble3, ForgottenPlanet.modid + cobble3.getUnlocalizedName());
             GameRegistry.registerBlock(cobble4, ForgottenPlanet.modid + cobble4.getUnlocalizedName());
             
-            GameRegistry.registerBlock(emblazonedCoalOre, ForgottenPlanet.modid + emblazonedCoalOre.getUnlocalizedName());
+            GameRegistry.registerBlock(forgottenFuelOre, ForgottenPlanet.modid + forgottenFuelOre.getUnlocalizedName());
+            GameRegistry.registerBlock(forgottenDustOre, ForgottenPlanet.modid + forgottenDustOre.getUnlocalizedName());
+            
+            GameRegistry.registerBlock(flower1, ForgottenPlanet.modid + flower1.getUnlocalizedName());
     	}
     	
     	public static void addNames() {
@@ -142,6 +151,7 @@ public class Blocks {
             LanguageRegistry.addName(plank3, "Toxified Wood Planks");
             
             LanguageRegistry.addName(brick1, "Emblazoned Brick");
+            
             LanguageRegistry.addName(brick2, "Enchanted Brick");
             LanguageRegistry.addName(brick3, "Toxified Brick");
             
@@ -155,12 +165,15 @@ public class Blocks {
             LanguageRegistry.addName(stone3, "Enchanted Stone");
             LanguageRegistry.addName(stone4, "Toxified Stone");
             
-            LanguageRegistry.addName(cobble1, "Forgotten Cobble");
-            LanguageRegistry.addName(cobble2, "Emblazoned Cobble");
-            LanguageRegistry.addName(cobble3, "Enchanted Cobble");
-            LanguageRegistry.addName(cobble4, "Toxified Cobble");
+            LanguageRegistry.addName(cobble1, "Forgotten Cobblestone");
+            LanguageRegistry.addName(cobble2, "Emblazoned Cobblestone");
+            LanguageRegistry.addName(cobble3, "Enchanted Cobblestone");
+            LanguageRegistry.addName(cobble4, "Toxified Cobblestone");
             
-            LanguageRegistry.addName(emblazonedCoalOre, "Forgotten Fuel Ore");
+            LanguageRegistry.addName(forgottenFuelOre, "Forgotten Fuel Ore");
+            LanguageRegistry.addName(forgottenDustOre, "Forgotten Dust Ore");
+            
+            LanguageRegistry.addName(flower1, "Forgotten Flower");
     	}
     	
     	private static void setHarvestLevels() {

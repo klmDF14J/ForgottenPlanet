@@ -59,6 +59,8 @@ public class BlockID {
 	public static int cobble3 = getNextID();
 	public static int cobble4 = getNextID();
 	
+	public static int flower1 = getNextID();
+	
 	public static int getNextID() {
 		int id = startID + idsCycled;
 		idsCycled++;

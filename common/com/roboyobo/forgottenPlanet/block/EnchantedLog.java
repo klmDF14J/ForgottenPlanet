@@ -17,7 +17,7 @@ public class EnchantedLog extends Block
        public EnchantedLog(int id, Material par2Material)
        {
              super(id, par2Material);
-             this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
+             this.setCreativeTab(ForgottenPlanet.forgottenPlanetBlocks);
              this.setHardness(2F);
        }
        

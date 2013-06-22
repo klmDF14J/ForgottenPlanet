@@ -19,7 +19,7 @@ public class ForgottenPlanetBlock extends Block
        public ForgottenPlanetBlock(int id, Material par2Material)
        {
              super(id, par2Material);
-             this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
+             this.setCreativeTab(ForgottenPlanet.forgottenPlanetBlocks);
              this.setHardness(0.5F);
              this.setTickRandomly(true);
        }

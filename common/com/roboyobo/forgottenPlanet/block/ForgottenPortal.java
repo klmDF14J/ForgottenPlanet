@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Random;
 
 import com.roboyobo.forgottenPlanet.ForgottenPlanet;
-import com.roboyobo.forgottenPlanet.ForgottenPlanetFileWriter;
 import com.roboyobo.forgottenPlanet.dimension.DimensionHandler;
 import com.roboyobo.forgottenPlanet.dimension.ForgottenPlanetTeleporter;
 
@@ -26,7 +25,7 @@ public class ForgottenPortal extends BlockPortal
  public ForgottenPortal(int id, int texture)
  {
   super(id);
-  this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
+  this.setCreativeTab(ForgottenPlanet.forgottenPlanetBlocks);
  }
  String object;
  
@@ -112,12 +111,7 @@ public class ForgottenPortal extends BlockPortal
     {
     
      thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, DimensionHandler.dimension, new ForgottenPlanetTeleporter(thePlayer.mcServer.worldServerForDimension(DimensionHandler.dimension)));
-     try {
-    		ForgottenPlanetFileWriter.saveObjectToFile("Forgotten Planet", new String("portalGenerated = true"));
-    	} catch (IOException e) {
-    		// TODO Auto-generated catch block
-    		e.printStackTrace();
-    	}
+
     }
     else
     {

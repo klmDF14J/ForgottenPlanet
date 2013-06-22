@@ -17,6 +17,8 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
+import net.minecraftforge.common.IPlantable;
 
 public class ForgottenGrass extends Block
 {
@@ -28,8 +30,13 @@ public class ForgottenGrass extends Block
        public ForgottenGrass(int id, Material par2Material)
        {
              super(id, par2Material);
-             this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
+             this.setCreativeTab(ForgottenPlanet.forgottenPlanetBlocks);
              this.setHardness(0.5F);
+       }
+       
+       @Override
+       public boolean canSustainPlant(World world, int x, int y, int z, ForgeDirection direction, IPlantable plant) {
+    	   return true;
        }
        
        @SideOnly(Side.CLIENT)

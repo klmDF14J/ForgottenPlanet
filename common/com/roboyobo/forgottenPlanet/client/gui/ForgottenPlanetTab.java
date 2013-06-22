@@ -2,13 +2,14 @@ package com.roboyobo.forgottenPlanet.client.gui;
 
 import com.roboyobo.forgottenPlanet.ForgottenPlanet;
 import com.roboyobo.forgottenPlanet.block.Blocks;
+import com.roboyobo.forgottenPlanet.item.Items;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.creativetab.CreativeTabs;
 
 public class ForgottenPlanetTab extends CreativeTabs{
-	public static int tabNumber;
+	public int tabNumber;
 	public String tabName;
 	public ForgottenPlanetTab(int par1, String par2Str, int par3Tab) {
 		super(par1, par2Str);
@@ -17,14 +18,9 @@ public class ForgottenPlanetTab extends CreativeTabs{
 		
 	}
 	public int getTabIconItemIndex() {
-		if(tabNumber > 1) {
-			tabNumber = 0;
-		}
-		switch(tabNumber) {
-		case 0 : return Blocks.forgottenGrass.blockID;
-		case 1 : return Blocks.enchantedGrass.blockID;
-		default : return Block.bedrock.blockID;
-		}
+		int[] blocks = {Blocks.forgottenGrass.blockID, Items.forgottenFuel.itemID};
+		int tab = blocks[tabNumber];
+		return tab;
 	}
 
 	

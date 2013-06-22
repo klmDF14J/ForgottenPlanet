@@ -19,7 +19,7 @@ public class ForgottenPlanetStoneBlock extends Block {
 		super(i, Material.rock);
 		this.setHardness(1.5F);
         this.setResistance(5F);
-        this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
+        this.setCreativeTab(ForgottenPlanet.forgottenPlanetBlocks);
         id = ID;
 	}
 	

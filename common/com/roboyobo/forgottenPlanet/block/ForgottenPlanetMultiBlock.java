@@ -18,7 +18,7 @@ public class ForgottenPlanetMultiBlock extends Block
        public ForgottenPlanetMultiBlock(int id, Material par2Material)
        {
              super(id, par2Material);
-             this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
+             this.setCreativeTab(ForgottenPlanet.forgottenPlanetBlocks);
        }
       
        @SideOnly(Side.CLIENT)

@@ -16,7 +16,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.MinecraftForge;
 
+import com.roboyobo.forgottenPlanet.achievement.Achievements;
 import com.roboyobo.forgottenPlanet.block.BlockID;
 import com.roboyobo.forgottenPlanet.block.Blocks;
 import com.roboyobo.forgottenPlanet.block.EmblazonedGrass;
@@ -28,9 +30,13 @@ import com.roboyobo.forgottenPlanet.block.ForgottenPlanetStoneBlock;
 import com.roboyobo.forgottenPlanet.block.ForgottenPortal;
 import com.roboyobo.forgottenPlanet.client.gui.ForgottenPlanetTab;
 import com.roboyobo.forgottenPlanet.dimension.DimensionHandler;
-import com.roboyobo.forgottenPlanet.dimension.EmblazonedForestBiome;
+import com.roboyobo.forgottenPlanet.dimension.ForgottenPlanetBiome;
 import com.roboyobo.forgottenPlanet.dimension.ForgottenLootGenerator;
 import com.roboyobo.forgottenPlanet.dimension.ForgottenPlanetWorldProvider;
+import com.roboyobo.forgottenPlanet.handler.CraftingHandler;
+import com.roboyobo.forgottenPlanet.handler.FuelHandler;
+import com.roboyobo.forgottenPlanet.handler.PickupHandler;
+import com.roboyobo.forgottenPlanet.handler.PlayerHandler;
 import com.roboyobo.forgottenPlanet.item.Items;
 import com.roboyobo.forgottenPlanet.mob.Mobs;
 import com.roboyobo.forgottenPlanet.mob.entity.EntityEmblazonedCreeper;
@@ -73,7 +79,8 @@ public class ForgottenPlanet implements IPlayerTracker
        public static BiomeGenBase emblazonedForest;
        static int startEntityId = 300;
        
-       public static CreativeTabs forgottenPlanetTab = new ForgottenPlanetTab(CreativeTabs.getNextID(), modName, 0);
+       public static CreativeTabs forgottenPlanetBlocks = new ForgottenPlanetTab(CreativeTabs.getNextID(), modName + " Blocks", 0);
+       public static CreativeTabs forgottenPlanetItems = new ForgottenPlanetTab(CreativeTabs.getNextID(), modName + " Items", 1);
        
        @SidedProxy(clientSide = "com.roboyobo.forgottenPlanet.proxy.ClientProxy", serverSide = "com.roboyobo.forgottenPlanet.proxy.CommonProxy")
        public static CommonProxy proxy;
@@ -91,20 +98,27 @@ public class ForgottenPlanet implements IPlayerTracker
        
        private void initAll() {
     	   proxy.registerRenderThings();
-    	   Blocks.setupBlocks();
     	   Items.setupItems();
-    	   emblazonedForest = new EmblazonedForestBiome(23).setBiomeName("Forgotten Planet").setMinMaxHeight(0.2F, 1F).setTemperatureRainfall(1F, 0F);
+    	   Blocks.setupBlocks();
+    	   emblazonedForest = new ForgottenPlanetBiome(23).setBiomeName("Forgotten Planet").setMinMaxHeight(0.2F, 1F).setTemperatureRainfall(1F, 0F);
     	   ForgottenLootGenerator.init();
     	   DimensionHandler.setupDimension();
     	   Recipes.initRecipes();
     	   Mobs.initMobs();
-
+    	   MinecraftForge.addGrassPlant(Blocks.flower1, 0, 20);
+    	   if(SideHandler.isClient()) {
+    		   Achievements.init();
+    	   }
+    	   GameRegistry.registerFuelHandler(new FuelHandler());
+    	   GameRegistry.registerCraftingHandler(new CraftingHandler());
+    	   GameRegistry.registerPickupHandler(new PickupHandler());
+    	   GameRegistry.registerPlayerTracker(new PlayerHandler());
        }
+       
 
 	@Override
 	public void onPlayerLogin(EntityPlayer player) {
-		player.cloakUrl = "http://skins.minecraft.net/MinecraftCloaks/Notch.png";
-		player.updateCloak();
+
 	}
 
 	@Override
@@ -114,9 +128,7 @@ public class ForgottenPlanet implements IPlayerTracker
 
 	@Override
 	public void onPlayerChangedDimension(EntityPlayer player) {
-		//if(player.dimension == DimensionHandler.dimension) {
-			player.addChatMessage(player + " has just enetered the Forgotten Planet");
-		//}
+		
 	}
 
 	@Override

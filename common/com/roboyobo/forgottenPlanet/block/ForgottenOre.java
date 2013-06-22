@@ -15,16 +15,18 @@ import net.minecraft.util.Icon;
 public class ForgottenOre extends Block {
 
 	private Icon icon;
+	private int id;
 	
-	public ForgottenOre(int par1, Material par2Material) {
+	public ForgottenOre(int par1, Material par2Material, int idToDrop) {
 		super(par1, par2Material);
-		this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
+		this.setCreativeTab(ForgottenPlanet.forgottenPlanetBlocks);
 		this.setHardness(1.5F);
         this.setResistance(5F);
+        id = idToDrop;
 	}
 	
 	public int idDropped(int par1, Random par2Random, int par3) {
-		return this.blockID;
+		return id;
 	}
 	
 	@SideOnly(Side.CLIENT)

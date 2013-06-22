@@ -28,7 +28,7 @@ public class EmblazonedGrass extends Block
        public EmblazonedGrass(int id, Material par2Material)
        {
              super(id, par2Material);
-             this.setCreativeTab(ForgottenPlanet.forgottenPlanetTab);
+             this.setCreativeTab(ForgottenPlanet.forgottenPlanetBlocks);
              this.setHardness(0.5F);
              this.setTickRandomly(true);
        }
@@ -50,14 +50,6 @@ public class EmblazonedGrass extends Block
        }
        
        public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random) {
-    	   numOfTimesRun++;
-    	   if(numOfTimesRun == 5) {
-    	   ForgottenPlanetTab.tabNumber++;
-    	   numOfTimesRun = 0;
-    	   }
-    	   if(par1World.isRaining() == true) {
-    		   par1World.toggleRain();
-    	   }
     	   int rand = par5Random.nextInt(30);
     	   if(rand == 1) {
     	   ParticleSpawner.spawnRandomParticle(par5Random, par1World, "reddust", par2, par3, par4, 255, 255, 0);
@@ -65,6 +57,8 @@ public class EmblazonedGrass extends Block
     	   ParticleSpawner.spawnRandomParticle(par5Random, par1World, "lava", par2, par3, par4, 0, 0, 0);
     	   }
        }
+       
+       //270 67 224
        
        public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
        {

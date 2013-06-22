@@ -426,10 +426,10 @@ public class ForgottenPlanetChunkProvider implements IChunkProvider
                         BiomeGenBase var23 = this.biomesForGeneration[var14 + var21 + 2 + (var15 + var22 + 2) * (par5 + 5)];
                         float var24 = this.parabolicField[var21 + 2 + (var22 + 2) * 5] / (var23.minHeight + 2.0F);
 
-                        if (var23.minHeight > var20.minHeight)
-                        {
+                        //if (var23.minHeight > var20.minHeight)
+                        //{
                             var24 /= 2.0F;
-                        }
+                        //}
 
                         var16 += var23.maxHeight * var24;
                         var17 += var23.minHeight * var24;
